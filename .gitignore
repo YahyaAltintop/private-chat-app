@@ -1,0 +1,12 @@
+logs
+*.log
+npm-debug.log*
+build/Release
+node_modules/
+jspm_packages/
+.npm
+.env
+.vscode-test
+.pnp.*
+.vscode
+.temp

@@ -1,0 +1,8 @@
+{
+  "name": "private-chat-app",
+  "version": "1.0.0",
+  "description": "Private messaging application",
+  "keywords": [],
+  "author": "Yahya Altıntop <yahyaltntp@gmail.com>",
+  "license": "MIT"
+}
