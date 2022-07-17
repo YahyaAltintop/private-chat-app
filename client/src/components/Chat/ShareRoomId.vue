@@ -22,14 +22,18 @@ export default {
   },
   methods: {
     copyRoomCode() {
-      navigator.clipboard.writeText(this.$store.roomId).then(() => {
-        this.imgLink = "copied-icon.svg";
-        this.$refs.RoomIdInput.select();
+      this.$refs.RoomIdInput.select();
+      this.imgLink = "copied-icon.svg";
 
-        setTimeout(() => {
-          this.imgLink = "copy-clipboard-icon.svg";
-        }, 1500);
-      });
+      if (window.navigator?.clipboard) {
+        navigator.clipboard.writeText(this.$store.roomId);
+      } else {
+        document.execCommand("copy");
+      }
+
+      setTimeout(() => {
+        this.imgLink = "copy-clipboard-icon.svg";
+      }, 1500);
     },
   },
 };

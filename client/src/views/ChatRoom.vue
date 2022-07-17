@@ -36,9 +36,8 @@ export default {
   data() {
     return {
       chatOwner: this.$store.getChatOwner,
-      message: null,
-      chatContent: null,
-      dateNow: null,
+      message: "",
+      chatContent: null
     };
   },
   mounted() {
@@ -66,7 +65,8 @@ export default {
   },
   methods: {
     sendMessage() {
-      if (!this.message) {
+      if (!this.message?.trim()) {
+        this.message = "";
         return;
       }
 

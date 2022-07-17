@@ -3,7 +3,7 @@ const { createServer } = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 const app = exprees();
 
@@ -14,7 +14,9 @@ app.use(exprees.urlencoded({ extended: true }));
 const httpServer = createServer(app);
 
 const io = new Server(httpServer, {
-    cors: { origin: "*" }
+    cors: {
+        origin: ["http://www.pri-chat.com", "http://pri-chat.com", "http://localhost:3000"],
+    },
 })
 
 app.get("/", (req, res) => {

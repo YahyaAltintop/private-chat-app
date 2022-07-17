@@ -10,3 +10,4 @@ jspm_packages/
 .pnp.*
 .vscode
 .temp
+dist/
