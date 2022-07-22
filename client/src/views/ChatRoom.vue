@@ -1,8 +1,3 @@
-<script setup>
-import ParticipantList from "../components/Chat/ParticipantList.vue";
-import ChatHeader from "../components/Chat/ChatHeader.vue";
-import BackChatBottom from "../components/Chat/BackChatBottom.vue";
-</script>
 
 <template>
   <div class="chat">
@@ -31,12 +26,16 @@ import BackChatBottom from "../components/Chat/BackChatBottom.vue";
 </template>
 
 <script>
+import ParticipantList from "../components/Chat/ParticipantList.vue";
+import ChatHeader from "../components/Chat/ChatHeader.vue";
+import BackChatBottom from "../components/Chat/BackChatBottom.vue";
+
 export default {
   components: { ParticipantList, ChatHeader, BackChatBottom },
   data() {
     return {
       chatOwner: this.$store.getChatOwner,
-      message: "",
+      message: null,
       chatContent: null
     };
   },
